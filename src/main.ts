@@ -1,7 +1,7 @@
 import "reflect-metadata"
 import 'dotenv'
 import express, { json } from 'express';
-import UserRoutes from './controllers/UsersRoutes.js';
+import UserRoutes from './routes/UsersRoutes.js';
 import { MySQLDataSource } from "./config/MySQLConnection.js";
 
 const app = express();
