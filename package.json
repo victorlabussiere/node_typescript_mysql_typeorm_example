@@ -12,9 +12,10 @@
     "typeorm": "^0.3.20"
   },
   "scripts": {
-    "dev": "tsc && node ./dist/main.js"
+    "dev": "nodemon -e ts --watch src .env --exec \"tsc --incremental && node dist/main.js\""
   },
   "devDependencies": {
-    "@types/cors": "^2.8.17"
+    "@types/cors": "^2.8.17",
+    "nodemon": "^3.1.0"
   }
 }
