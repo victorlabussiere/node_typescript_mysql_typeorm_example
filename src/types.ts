@@ -13,3 +13,14 @@ export type UpdateUserDTO = {
     birthday?: string | null,
     email?: string | null
 }
+
+export type UserLoginDto = {
+    email: string,
+    password: string
+}
+
+export type TokenInfos = {
+    id: number
+    email: string
+    name: string
+}

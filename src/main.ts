@@ -4,6 +4,7 @@ import cors, { CorsOptions } from 'cors'
 import express, { json } from 'express';
 import UserRoutes from './routes/UsersRoutes.js';
 import { MySQLDataSource } from "./config/MySQLConnection.js";
+import AuthRoutes from "./routes/AuthRoutes.js";
 
 let usersCorsOptions: CorsOptions = {
     origin: 'http://localhost:3000',
@@ -19,6 +20,7 @@ MySQLDataSource.initialize()
     .catch(err => console.trace(err))
 
 app.use('/users', cors(usersCorsOptions), UserRoutes)
+app.use('/auth', AuthRoutes)
 
 const PORT = process.env.PORT || 3;
 app.listen(PORT, () => {
