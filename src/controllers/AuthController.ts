@@ -13,6 +13,11 @@ export default class AuthControllers {
             secure: true,
             sameSite: 'strict',
             maxAge: 3600000,
-        });
+        }).json();
+    }
+
+    public async logoff(req: Request, res: Response): Promise<Response> {
+        const result = await this.authService.logoff(req)
+        return await res.status(result.status).clearCookie(result.data).json()
     }
 }

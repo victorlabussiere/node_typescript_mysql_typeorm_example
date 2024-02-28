@@ -11,5 +11,6 @@ const authServices: AuthService = new AuthService(MySQLDataSource.getRepository(
 const authController: AuthControllers = new AuthControllers(authServices)
 
 AuthRoutes.post('/login', (req, res) => authController.login(req, res))
+AuthRoutes.post('/logoff', (req, res) => authController.logoff(req, res))
 
 export default AuthRoutes
